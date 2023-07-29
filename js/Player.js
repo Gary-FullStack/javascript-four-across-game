@@ -19,4 +19,16 @@ class Player {
 
     return tokens;
   }
+
+  get unusedTokens() {
+    return this.tokens.filter((token) => !token.dropped);
+  }
+
+  get activeToken() {
+    return this.unusedTokens[0];
+  }
+
+  checkTokens() {
+    return this.unusedTokens.length == 0 ? false : true;
+  }
 }
